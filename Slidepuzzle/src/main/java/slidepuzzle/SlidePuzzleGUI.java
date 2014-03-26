@@ -10,7 +10,7 @@ import javax.swing.event.*;
 class SlidePuzzleGUI extends JPanel {
    // instance variables
     private GraphicsPanel    SPgraphics;
-    private SlidePuzzleModel _puzzleModel = new SlidePuzzleModel();
+    private SlidePuzzleModel SPmodel = new SlidePuzzleModel();
  
 
 
@@ -43,7 +43,7 @@ class SlidePuzzleGUI extends JPanel {
         private Font _biggerFont;
         
         
-        //================================================== constructor
+      
         public GraphicsPanel() {
             _biggerFont = new Font("SansSerif", Font.BOLD, CELL_SIZE/2);
             this.setPreferredSize(
@@ -53,14 +53,14 @@ class SlidePuzzleGUI extends JPanel {
         }//end constructor
         
         
-        //=======================================x method paintComponent
+ 
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             for (int r=0; r<ROWS; r++) {
                 for (int c=0; c<COLUMNS; c++) {
                     int x = c * CELL_SIZE;
                     int y = r * CELL_SIZE;
-                    String text = _puzzleModel.getFace(r, c);
+                    String text = SPmodel.getFace(r, c);
                     if (text != null) {
                         g.setColor(Color.gray);
                         g.fillRect(x+2, y+2, CELL_SIZE-4, CELL_SIZE-4);
@@ -73,19 +73,19 @@ class SlidePuzzleGUI extends JPanel {
         }//end paintComponent
         
         
-        //======================================== listener mousePressed
+ 
         public void mousePressed(MouseEvent e) {
-            //--- map x,y coordinates into a row and col.
+            //--- map x,y coordinates into a row and column.
             int col = e.getX()/CELL_SIZE;
             int row = e.getY()/CELL_SIZE;
-            
-            if (!_puzzleModel.moveTile(row, col)) {
-                // moveTile moves tile if legal, else returns false.
+          
+            if (!SPmodel.moveTile(row, col)) {
+               
                 Toolkit.getDefaultToolkit().beep();
             }
             
-            this.repaint();  // Show any updates to model.
-        }//end mousePressed
+            this.repaint(); 
+        }
         
         
         //========================================== ignore these events
@@ -97,15 +97,15 @@ class SlidePuzzleGUI extends JPanel {
         public void mouseEntered (MouseEvent e) {}
         @Override
         public void mouseExited  (MouseEvent e) {}
-    }//end class GraphicsPanel
+    }
     
-    ////////////////////////////////////////// inner class NewGameAction
+  
     public class NewGameAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            _puzzleModel.reset();
+            SPmodel.reset();
             SPgraphics.repaint();
         }
-    }//end inner class NewGameAction
+    }
 
-}//end class SlidePuzzleGUI
+}
