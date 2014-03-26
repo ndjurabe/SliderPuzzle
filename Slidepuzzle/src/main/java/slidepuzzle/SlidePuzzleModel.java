@@ -2,6 +2,7 @@
 package slidepuzzle;
 
 class SlidePuzzleModel {
+    
     private static final int ROWS = 3;
     private static final int COLS = 3;
     
