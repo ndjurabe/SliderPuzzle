@@ -6,7 +6,7 @@ class SlidePuzzleModel {
     private static final int ROWS = 3;
     private static final int COLS = 3;
     
-    private Tile[][] _contents;  // All tiles.
+    public Tile[][] _contents;  // All tiles.
     private Tile     _emptyTile; // The empty space.
     
     
@@ -53,7 +53,7 @@ class SlidePuzzleModel {
     
     
  
-    private boolean checkEmpty(int r, int c, int rdelta, int cdelta) {
+    public boolean checkEmpty(int r, int c, int rdelta, int cdelta) {
         int rNeighbor = r + rdelta;
         int cNeighbor = c + cdelta;
         
@@ -69,7 +69,7 @@ class SlidePuzzleModel {
 
     public boolean isLegalRowCol(int r, int c) {
         return r>=0 && r<ROWS && c>=0 && c<COLS;
-    }//end isLegalRowCol
+    }
     
     
     
@@ -79,6 +79,7 @@ class SlidePuzzleModel {
         _contents[r1][c1] = _contents[r2][c2];
         _contents[r2][c2] = temp;
     }
+    
     public boolean isGameOver() {
         for (int r=0; r<ROWS; r++) {
             for (int c=0; c<ROWS; c++) {
