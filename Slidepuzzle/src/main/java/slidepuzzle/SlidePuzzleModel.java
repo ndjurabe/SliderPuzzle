@@ -111,7 +111,7 @@ class SlidePuzzleModel {
 
     }
 
-    private void exchangeTiles(int r1, int c1, int r2, int c2) {
+    public void exchangeTiles(int r1, int c1, int r2, int c2) {
 
         Tile temp = _contents[r1][c1];
 

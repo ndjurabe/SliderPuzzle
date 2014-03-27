@@ -102,13 +102,18 @@ public class TileTest {
 
     }
 
- 
+ @Test
+ public void setFaceTest(){
+     tile.setFace("1");
+     assertEquals(NewTile.getFace(),tile.getFace());
+     
+ }
 
    
 
     @Test
 
-     public void setFaceTest() {
+     public void getFaceTest() {
 
          
 

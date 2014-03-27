@@ -18,7 +18,7 @@ class SlidePuzzle {
 
         JFrame window = new JFrame("Slide Puzzle");
 
-         SlidePuzzleModel puzzle = new SlidePuzzleModel();
+//         SlidePuzzleModel puzzle = new SlidePuzzleModel();
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -30,19 +30,19 @@ class SlidePuzzle {
 
         window.setResizable(false);
 
-       
-
-         System.out.println(puzzle.get_contents()[0][0].getFace());
-
-          System.out.println(puzzle.get_contents()[0][1].getFace());
-
-           System.out.println(puzzle.get_contents()[0][2].getFace());
-
-            System.out.println(puzzle.get_contents()[1][0].getFace());
-
-             System.out.println(puzzle.get_contents()[1][1].getFace());
-
-              System.out.println(puzzle.get_contents()[1][2].getFace());
+//       
+//
+//         System.out.println(puzzle.get_contents()[0][0].getFace());
+//
+//          System.out.println(puzzle.get_contents()[0][1].getFace());
+//
+//           System.out.println(puzzle.get_contents()[0][2].getFace());
+//
+//            System.out.println(puzzle.get_contents()[1][0].getFace());
+//
+//             System.out.println(puzzle.get_contents()[1][1].getFace());
+//
+//              System.out.println(puzzle.get_contents()[1][2].getFace());
 
     }
 

@@ -58,16 +58,22 @@ public class SlidePuzzleModelTest {
     public void tearDown() {
     }
 
+//    @Test
+//    public void checkThatNoTilesAreSame() {
+//        for (int i = 0; i < 2; i++) {
+//            assertFalse(puzzle.getFace(i, i).equals(puzzle.getFace(i + 1, i)));
+//        }
+//    }
     @Test
-    public void checkThatNoTilesAreSame() {
-
-        for (int i = 1; i < 3; i++) {
-
-
-            assertFalse(puzzle.getFace(i, i).equals(puzzle.getFace(i - 1, i)));
-
-        }
-
+    public void exchangeTilesTest(){
+        Tile firstTile = puzzle.get_contents()[0][1];
+        puzzle.exchangeTiles(0,1,1,0);
+        assertFalse(firstTile.equals(puzzle.get_contents()[0][1]));
+        
+    }
+    @Test
+    public void getFaceTest(){
+        assertEquals(puzzle.get_contents()[row][col].getFace(),puzzle.getFace(row, col));
     }
 
     @Test
