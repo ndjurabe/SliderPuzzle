@@ -14,3 +14,18 @@ Deadline 2:
 
 -On the 17.3, updated the journal with deadline 1 description (before the dirst deadline, I added the wrong, empty folder into the online repository :/)
 -Added a pit-generated text document into the pit folder in documentation
+
+Don't know how to make the tests, so just the game code for now... Not much for TDD :_D
+
+
+Deadline 3: 
+
+-26.3 Saw how to make a test. Still not sure I have any idea I know how to make them for my game but at least I know there must be the "assert" thing :D
+-made 2 tests. Still don't know how to make them for more complicated methods.
+
+-27.3 magically made a couple more tests. Some kept passing or failing randomly, so I took them away
+-made a small class diagram
+-added Pit-report.
+
+
+--I'm going to have to probably re-write(or comment on) most of the code as it is very difficult to follow now (especially when trying to think of tests to check it :D)
