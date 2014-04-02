@@ -44,37 +44,34 @@ public class SlidePuzzleModelTest {
     public void tearDown() {
     }
 
-    @Test
-    public void checkThatTileFaceNotNull() {
-
-        assertNotNull(puzzle.getFace(row, col));
-
-    }
-
-    @Test
-    public void checkThatNoTilesAreSame() {
-        puzzle.reset();
-        for (int i = 1; i < 3; i++) {
-            for (int j = 1; j < 3; j++) {
-
-                assertFalse(puzzle.getFace(i, j).equals(puzzle.getFace(i - 1, j)));
-            }
-
-        }
-
-    }
-   
 //    @Test
-//    public void tileDoesNotMoveItIsEmptyTest(){
-//       if(!puzzle.moveTile(row, col)){
-//           assertNull(puzzle._contents[row][col].getFace());
-//           
-//       }
-//          
-//       
+//    public void checkThatTileFaceNotNull() {
+//
+//        assertNotNull(puzzle.getFace(row, col));
+//
+//    }
+
+//    @Test
+//    public void checkThatNoTilesAreSame() {
+//        puzzle.reset();
+//        for (int i = 1; i < 3; i++) {
+//            for (int j = 1; j < 3; j++) {
+//
+//                assertFalse(puzzle.getFace(i, j).equals(puzzle.getFace(i - 1, j)));
+//            }
+//
+//        }
+//
+//    }
+    
+//    @Test
+//    public void checkEmptyTest(){
+//        puzzle.get_contents()[0][0].getFace();
+// puzzle.get_contents()[0][1].getFace();
+//
 //        
 //    }
-//    
-//    
+    
+
 
 }

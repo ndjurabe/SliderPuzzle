@@ -40,12 +40,12 @@ class SlidePuzzleGUI extends JPanel {
         private static final int COLUMNS = 3;
         
         private static final int CELL_SIZE = 80; // Pixels
-        private Font _biggerFont;
+        private Font biggerFont;
         
         
       
         public GraphicsPanel() {
-            _biggerFont = new Font("SansSerif", Font.BOLD, CELL_SIZE/2);
+            biggerFont = new Font("SansSerif", Font.BOLD, CELL_SIZE/2);
             this.setPreferredSize(
                    new Dimension(CELL_SIZE * COLUMNS, CELL_SIZE*ROWS));
             this.setBackground(Color.black);
@@ -65,7 +65,7 @@ class SlidePuzzleGUI extends JPanel {
                         g.setColor(Color.gray);
                         g.fillRect(x+2, y+2, CELL_SIZE-4, CELL_SIZE-4);
                         g.setColor(Color.black);
-                        g.setFont(_biggerFont);
+                        g.setFont(biggerFont);
                         g.drawString(text, x+20, y+(3*CELL_SIZE)/4);
                     }
                 }
