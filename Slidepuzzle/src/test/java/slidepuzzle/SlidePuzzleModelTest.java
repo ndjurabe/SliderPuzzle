@@ -91,16 +91,16 @@ public class SlidePuzzleModelTest {
         assertFalse(puzzle.isLegalRowCol(0, -1));
     }
 
-    @Test
-    public void tileDoesNotMoveIfSlotNotEmptyTest() {
-
-        if (!(puzzle.moveIfEmpty(row, col, -1, 0) || puzzle.moveIfEmpty(row, col, 1, 0)
-                || puzzle.moveIfEmpty(row, col, 0, -1) || puzzle.moveIfEmpty(row, col, 0, 1))) {
-            assertFalse(puzzle.moveTile(row, col));
-        }
-
-
-
-
-    }
+//    @Test
+//    public void tileDoesNotMoveIfSlotNotEmptyTest() {
+//
+//        if (!(puzzle.moveIfEmpty(row, col, -1, 0) || puzzle.moveIfEmpty(row, col, 1, 0)
+//                || puzzle.moveIfEmpty(row, col, 0, -1) || puzzle.moveIfEmpty(row, col, 0, 1))) {
+//            assertFalse(puzzle.moveTile(row, col));
+//        }
+//
+//
+//
+//
+//    }
 }

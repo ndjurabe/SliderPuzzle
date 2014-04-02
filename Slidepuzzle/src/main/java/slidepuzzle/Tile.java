@@ -1,33 +1,32 @@
-
 package slidepuzzle;
 
 class Tile {
     
-    public int _row;     
-    public int _col;     
-    public String _face;  
+    public int row;     
+    public int col;     
+    public String face;  
     
 
     public Tile(int row, int col, String face) {
-        _row = row;
-        _col = col;
-        _face = face;
+        this.row = row;
+        this.col = col;
+        this.face = face;
     }
     
     
    
     public void setFace(String newFace) {
-        _face = newFace;
+        face = newFace;
     }
     
     
   
     public String getFace() {
-        return _face;
+        return face;
     }
     
     
     public boolean isInFinalPosition(int r, int c) {
-        return r==_row && c==_col;
+        return r==row && c==col;
     }
 }

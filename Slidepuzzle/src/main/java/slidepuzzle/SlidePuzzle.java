@@ -1,14 +1,6 @@
 package slidepuzzle;
 
- 
-
- 
-
 import javax.swing.JFrame;
-
- 
-
- 
 
 class SlidePuzzle {
 
@@ -18,7 +10,7 @@ class SlidePuzzle {
 
         JFrame window = new JFrame("Slide Puzzle");
 
-//         SlidePuzzleModel puzzle = new SlidePuzzleModel();
+        SlidePuzzleModel puzzle = new SlidePuzzleModel();
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -29,6 +21,8 @@ class SlidePuzzle {
         window.show();  
 
         window.setResizable(false);
+        
+        System.out.println(puzzle.get_contents());
 
 //       
 //
