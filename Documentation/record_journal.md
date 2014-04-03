@@ -29,3 +29,12 @@ Deadline 3:
 
 
 --I'm going to have to probably re-write(or comment on) most of the code as it is very difficult to follow now (especially when trying to think of tests to check it :D)
+
+Deadline 4:
+
+-1-2.4 struggled through trying to create some more tests and try to break down the bigger methods into smalled ones in the Logic class
+
+-3.4 spent a good while (5+ hours) on more test, more simplification of the logic class. 
+-got the pit report to cover over 80%! yay! :)
+-drawn something resembelling a sequence diagram. Those things always scared me and I am still not sure how to draw them ;__;
+- feels like progress has been made :)
