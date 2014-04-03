@@ -18,6 +18,7 @@ public class SlidePuzzleModelTest1 {
     private int row = (int) Math.random() * 2;
     private int col = (int) Math.random() * 2;
     private Tile emptytile;
+    
 
     public SlidePuzzleModelTest1() {
 
@@ -150,5 +151,61 @@ public class SlidePuzzleModelTest1 {
         assertTrue(puzzle.checkEmpty(0, 0, 0, 1));
         
         
+    }
+    
+    @Test
+    
+    public void moveTileTest(){
+        emptytile = puzzle.get_contents()[0][1];
+     emptytile.setFace(null); 
+     puzzle.get_contents()[0][0].setFace("1");
+     
+     assertTrue(puzzle.moveTile(0, 0));
+        
+    }
+    
+    @Test
+    
+    public void moveToEmptyTest(){
+         
+     emptytile = puzzle.get_contents()[0][1];
+     emptytile.setFace(null); 
+     puzzle.get_contents()[0][0].setFace("1");
+     
+     assertTrue(puzzle.moveToEmpty(0, 0, 0, 1));
+        
+    }
+    
+    
+   @Test
+    public void isLegalRowColTest() {
+        assertTrue(puzzle.isLegalRowCol(0, 1));
+    }
+
+    @Test
+    public void isLegalRowColTest2() {
+        assertFalse(puzzle.isLegalRowCol(5, 1));
+    }
+
+    @Test
+    public void isLegalRowColTest3() {
+        assertFalse(puzzle.isLegalRowCol(0, -1));
+    }
+    
+    
+    @Test
+    
+    public void exchangeTilesTest(){
+        Tile orig00tile = puzzle.get_contents()[0][0];
+       puzzle.exchangeTiles(0, 0, 0, 1);
+       assertNotSame(orig00tile,puzzle.get_contents()[0][0]);
+        assertSame(orig00tile,puzzle.get_contents()[0][1]);
+        
+    }
+    
+    @Test
+    public void isGameOverTest(){
+        puzzle.OrderPuzzle();
+        assertTrue(puzzle.isGameOver());
     }
 }
