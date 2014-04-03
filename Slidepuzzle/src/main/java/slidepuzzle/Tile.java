@@ -1,5 +1,7 @@
 package slidepuzzle;
 
+import java.util.Objects;
+
 class Tile {
     
     public int row;     
@@ -29,4 +31,22 @@ class Tile {
     public boolean isInFinalPosition(int r, int c) {
         return r==row && c==col;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Tile other = (Tile) obj;
+        if (!Objects.equals(this.face, other.face)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
