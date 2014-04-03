@@ -1,4 +1,3 @@
-
 package slidepuzzle;
 
 class Tile {
