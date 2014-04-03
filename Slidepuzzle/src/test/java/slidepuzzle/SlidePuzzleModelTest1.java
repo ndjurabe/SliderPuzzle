@@ -177,7 +177,8 @@ public class SlidePuzzleModelTest1 {
     }
     
     
-   @Test
+  
+    @Test
     public void isLegalRowColTest() {
         assertTrue(puzzle.isLegalRowCol(0, 1));
         assertTrue(puzzle.isLegalRowCol(0, 0));
