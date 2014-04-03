@@ -149,6 +149,7 @@ public class SlidePuzzleModelTest1 {
         
         
         assertTrue(puzzle.checkEmpty(0, 0, 0, 1));
+        assertTrue(puzzle.checkEmpty(1, 0, -1, 1));
         
         
     }
@@ -156,11 +157,11 @@ public class SlidePuzzleModelTest1 {
     @Test
     
     public void moveTileTest(){
-        emptytile = puzzle.get_contents()[0][1];
-     emptytile.setFace(null); 
-     puzzle.get_contents()[0][0].setFace("1");
-     
-     assertTrue(puzzle.moveTile(0, 0));
+
+     puzzle.OrderPuzzle();
+     assertFalse(puzzle.moveTile(0, 0));
+     assertTrue(puzzle.moveTile(2, 1));
+
         
     }
     
@@ -168,29 +169,33 @@ public class SlidePuzzleModelTest1 {
     
     public void moveToEmptyTest(){
          
-     emptytile = puzzle.get_contents()[0][1];
-     emptytile.setFace(null); 
-     puzzle.get_contents()[0][0].setFace("1");
-     
-     assertTrue(puzzle.moveToEmpty(0, 0, 0, 1));
-        
+
+     puzzle.OrderPuzzle();
+     assertTrue(puzzle.moveToEmpty(1, 2, 1, 0));
+
+
     }
     
     
    @Test
     public void isLegalRowColTest() {
         assertTrue(puzzle.isLegalRowCol(0, 1));
-    }
-
-    @Test
-    public void isLegalRowColTest2() {
-        assertFalse(puzzle.isLegalRowCol(5, 1));
-    }
-
-    @Test
-    public void isLegalRowColTest3() {
+        assertTrue(puzzle.isLegalRowCol(0, 0));
+        assertTrue(puzzle.isLegalRowCol(2, 2));
+        assertTrue(puzzle.isLegalRowCol(1, 1));
+        assertFalse(puzzle.isLegalRowCol(5, 1)); 
         assertFalse(puzzle.isLegalRowCol(0, -1));
+        assertFalse(puzzle.isLegalRowCol(8, 20)); 
+        assertFalse(puzzle.isLegalRowCol(-57, 0));
+        assertTrue(puzzle.isLegalRowCol(2, 1));
+        assertFalse(puzzle.isLegalRowCol(3, 3));
+        assertFalse(puzzle.isLegalRowCol(0, 7));
+        assertFalse(puzzle.isLegalRowCol(-9, -27));
+        
+        
     }
+
+   
     
     
     @Test
@@ -208,4 +213,53 @@ public class SlidePuzzleModelTest1 {
         puzzle.OrderPuzzle();
         assertTrue(puzzle.isGameOver());
     }
+    
+    @Test
+    public void moveToEmptyTest2(){
+         emptytile = puzzle.get_contents()[0][1];
+     emptytile.setFace(null); 
+     puzzle.get_contents()[0][0].setFace("1");
+     
+     assertFalse(puzzle.moveToEmpty(0, 0, 0, 0));
+     assertFalse(puzzle.moveToEmpty(0, 0, 0, 2));
+     assertFalse(puzzle.moveToEmpty(0, 0, 0, -1));
+     assertFalse(puzzle.moveToEmpty(0, 0, 1, -1));
+     assertFalse(puzzle.moveToEmpty(0, 0, -2, 0));
+        
+    }
+    @Test
+    public void moveToEmptyTest3(){
+      puzzle.OrderPuzzle();
+     puzzle.exchangeTiles(2, 2, 2, 1);
+     puzzle.exchangeTiles(2, 1, 1, 1);
+     assertTrue(puzzle.moveTile(0, 1));
+
+}
+        @Test
+    public void moveToEmptyTest4(){
+      puzzle.OrderPuzzle();
+     puzzle.exchangeTiles(2, 2, 2, 1);
+     puzzle.exchangeTiles(2, 1, 1, 1);
+    
+     assertTrue(puzzle.moveTile(1, 0));
+
+}
+        
+            @Test
+    public void moveToEmptyTest5(){
+      puzzle.OrderPuzzle();
+     puzzle.exchangeTiles(2, 2, 2, 1);
+     puzzle.exchangeTiles(2, 1, 1, 1);
+   
+     assertTrue(puzzle.moveTile(1, 2));
+   
+}
+                @Test
+    public void moveToEmptyTest6(){
+      puzzle.OrderPuzzle();
+     puzzle.exchangeTiles(2, 2, 2, 1);
+     puzzle.exchangeTiles(2, 1, 1, 1);
+   
+     assertTrue(puzzle.moveTile(2, 1));
+}
 }
