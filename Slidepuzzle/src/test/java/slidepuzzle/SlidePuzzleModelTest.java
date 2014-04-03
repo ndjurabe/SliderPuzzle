@@ -62,7 +62,7 @@ public class SlidePuzzleModelTest {
     }
 
 //    @Test
-<<<<<<< HEAD
+
 //    public void checkThatTileFaceNotNull() {
 //
 //        assertNotNull(puzzle.getFace(row, col));
@@ -92,8 +92,8 @@ public class SlidePuzzleModelTest {
     
 
 
-}
-=======
+
+
 //    public void checkThatNoTilesAreSame() {
 //        for (int i = 0; i < 2; i++) {
 //            assertFalse(puzzle.getFace(i, i).equals(puzzle.getFace(i + 1, i)));
@@ -139,4 +139,4 @@ public class SlidePuzzleModelTest {
 //
 //    }
 }
->>>>>>> cb2f511c50c0cb41607b9b246279c52e569e9f35
+

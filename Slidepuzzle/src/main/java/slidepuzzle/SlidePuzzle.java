@@ -9,13 +9,12 @@ class SlidePuzzle {
     public static void main(String[] args) {
 
         JFrame window = new JFrame("Slide Puzzle");
-<<<<<<< HEAD
+
          SlidePuzzleModel puzzle = new SlidePuzzleModel();
-=======
 
-        SlidePuzzleModel puzzle = new SlidePuzzleModel();
 
->>>>>>> cb2f511c50c0cb41607b9b246279c52e569e9f35
+
+
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         window.setContentPane(new SlidePuzzleGUI());
@@ -25,7 +24,7 @@ class SlidePuzzle {
         window.show();  
 
         window.setResizable(false);
-<<<<<<< HEAD
+
         System.out.println(puzzle.get_contents().length);
         
        
@@ -36,7 +35,7 @@ class SlidePuzzle {
 //         System.out.println(puzzle.faceOnTile(1, 1));
 //         System.out.println(puzzle.faceOnTile(1, 2));
         
-=======
+
         
         System.out.println(puzzle.get_contents());
 
@@ -54,7 +53,7 @@ class SlidePuzzle {
 //
 //              System.out.println(puzzle.get_contents()[1][2].getFace());
 
->>>>>>> cb2f511c50c0cb41607b9b246279c52e569e9f35
+
     }
 
 }
