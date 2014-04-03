@@ -37,4 +37,5 @@ Deadline 4:
 -3.4 spent a good while (5+ hours) on more test, more simplification of the logic class. 
 -got the pit report to cover over 80%! yay! :)
 -drawn something resembelling a sequence diagram. Those things always scared me and I am still not sure how to draw them ;__;
+-not sure how javadoc works (there is not run->generate javadoc button nor does the command line work on my computer) so added some javadoc type text manually...
 - feels like progress has been made :)
