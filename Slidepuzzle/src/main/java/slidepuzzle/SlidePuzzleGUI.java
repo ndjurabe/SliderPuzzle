@@ -15,7 +15,7 @@ class SlidePuzzleGUI extends JPanel {
 
 
     public SlidePuzzleGUI() {
-        //create a button and add a listener to it
+        //pressing button New Game resets the game
         JButton newGameButton = new JButton("New Game");
         newGameButton.addActionListener(new NewGameAction());
 
@@ -48,9 +48,9 @@ class SlidePuzzleGUI extends JPanel {
             biggerFont = new Font("SansSerif", Font.BOLD, CELL_SIZE/2);
             this.setPreferredSize(
                    new Dimension(CELL_SIZE * COLUMNS, CELL_SIZE*ROWS));
-            this.setBackground(Color.black);
+            this.setBackground(Color.GREEN);
             this.addMouseListener(this);  // Listen own mouse events.
-        }//end constructor
+        }
         
         
  
@@ -64,13 +64,13 @@ class SlidePuzzleGUI extends JPanel {
                     if (text != null) {
                         g.setColor(Color.gray);
                         g.fillRect(x+2, y+2, CELL_SIZE-4, CELL_SIZE-4);
-                        g.setColor(Color.black);
+                        g.setColor(Color.GREEN);
                         g.setFont(biggerFont);
                         g.drawString(text, x+20, y+(3*CELL_SIZE)/4);
                     }
                 }
             }
-        }//end paintComponent
+        }
         
         
  
@@ -88,7 +88,7 @@ class SlidePuzzleGUI extends JPanel {
         }
         
         
-        //========================================== ignore these events
+//implementing an Action listener
         @Override
         public void mouseClicked (MouseEvent e) {}
         @Override
