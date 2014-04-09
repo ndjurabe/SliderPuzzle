@@ -31,7 +31,9 @@ class SlidePuzzleGUI extends JPanel {
         this.setLayout(new BorderLayout());
         this.add(controlPanel, BorderLayout.NORTH);
         this.add(SPgraphics, BorderLayout.CENTER);
-    }//end constructor
+        
+
+    }
 
 
     //complains, move the graphics panel inside?
@@ -102,10 +104,15 @@ class SlidePuzzleGUI extends JPanel {
   
     public class NewGameAction implements ActionListener {
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) {        
+            if(SPmodel.isGameOver()){
+            System.out.println("CONGRATS! YOU WIN!");
+        }
             SPmodel.reset();
             SPgraphics.repaint();
+        
         }
+        
     }
 
 }

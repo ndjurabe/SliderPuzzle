@@ -21,6 +21,7 @@ class SlidePuzzle {
         window.setResizable(false);
         
         
+        
 }}
 
  
