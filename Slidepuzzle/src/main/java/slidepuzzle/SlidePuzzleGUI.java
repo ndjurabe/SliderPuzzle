@@ -7,19 +7,29 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
+
+/**
+ * 
+ * @author nargiza
+ * 
+ * The graphic user interface
+ * 
+ */
 class SlidePuzzleGUI extends JPanel {
    // instance variables
     private GraphicsPanel    SPgraphics;
     private SlidePuzzleModel SPmodel = new SlidePuzzleModel();
  
 
-
+/**
+ * constructor of the class where the the graphics are set up
+ */
     public SlidePuzzleGUI() {
         //pressing button New Game resets the game
         JButton newGameButton = new JButton("New Game");
         newGameButton.addActionListener(new NewGameAction());
 
-        //panel to restart game maybe?
+
         JPanel controlPanel = new JPanel();
         controlPanel.setLayout(new FlowLayout());
         controlPanel.add(newGameButton);
@@ -36,7 +46,11 @@ class SlidePuzzleGUI extends JPanel {
     }
 
 
-    //complains, move the graphics panel inside?
+/**
+ * 
+ * panel graphics class
+ * 
+ */
     class GraphicsPanel extends JPanel implements MouseListener {
         private static final int ROWS = 3;
         private static final int COLUMNS = 3;
@@ -45,7 +59,11 @@ class SlidePuzzleGUI extends JPanel {
         private Font biggerFont;
         
         
-      
+      /**
+       * constructor
+       * 
+       * sets the font and the background color of the panel
+       */
         public GraphicsPanel() {
             biggerFont = new Font("SansSerif", Font.BOLD, CELL_SIZE/2);
             this.setPreferredSize(
@@ -54,7 +72,12 @@ class SlidePuzzleGUI extends JPanel {
             this.addMouseListener(this);  // Listen own mouse events.
         }
         
-        
+        /**
+         * method that decides how each tile looks
+         * including how the number on the tile looks
+         * 
+         * @param g -- the graphic equivalent of a single tile
+         */
  
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
@@ -75,7 +98,11 @@ class SlidePuzzleGUI extends JPanel {
         }
         
         
- 
+ /**
+  * method that keeps repainting the panel as the game progresses
+  * 
+  * @param e - event of when the mouse is pressed
+  */
         public void mousePressed(MouseEvent e) {
             //--- map x,y coordinates into a row and column.
             int col = e.getX()/CELL_SIZE;
@@ -101,9 +128,16 @@ class SlidePuzzleGUI extends JPanel {
         public void mouseExited  (MouseEvent e) {}
     }
     
-  
+  /**
+   * ActionListener type class
+   * 
+   * when the program is ran or when the "new game" button is pressed, this
+   */
     public class NewGameAction implements ActionListener {
-        @Override
+        /**
+         *   when the program is ran or when the "new game" button is pressed, this method takes care to restart the game.
+         */
+             @Override
         public void actionPerformed(ActionEvent e) {        
             if(SPmodel.isGameOver()){
             System.out.println("CONGRATS! YOU WIN!");

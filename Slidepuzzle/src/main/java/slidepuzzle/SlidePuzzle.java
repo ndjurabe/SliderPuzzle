@@ -2,9 +2,21 @@ package slidepuzzle;
 
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author nargiza
+ * 
+ * Main class
+ */
+
 class SlidePuzzle {
 
-   
+   /**
+    * 
+    * main
+    * 
+    * @param args command lines
+    */
 
     public static void main(String[] args) {
 
