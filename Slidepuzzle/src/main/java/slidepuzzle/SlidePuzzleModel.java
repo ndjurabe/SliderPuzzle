@@ -1,5 +1,10 @@
 package slidepuzzle;
 
+import java.awt.Component;
+import java.util.Arrays;
+import java.util.Objects;
+import javax.swing.JOptionPane;
+
 /**
  * @author nargiza
  *
@@ -19,6 +24,7 @@ class SlidePuzzleModel {
      */
     private Tile[][] contents;  // All tiles.
     private Tile emptyTile; // The empty space.
+    private Component frame;
 
     /**
      * constructor of the class, where the dimensions of the contents are given
@@ -81,6 +87,34 @@ class SlidePuzzleModel {
         emptyTile.setFace(null);
 
     }
+    
+
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 13 * hash + Arrays.deepHashCode(this.contents);
+        hash = 13 * hash + Objects.hashCode(this.emptyTile);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SlidePuzzleModel other = (SlidePuzzleModel) obj;
+        if (!Arrays.deepEquals(this.contents, other.contents)) {
+            return false;
+        }
+        if (!Objects.equals(this.emptyTile, other.emptyTile)) {
+            return false;
+        }
+        return true;
+    }
 
     /**
      * Randomizes tiles in the puzzle
@@ -114,6 +148,7 @@ class SlidePuzzleModel {
      * @return true if tile can be moved and false if it can't
      */
     public boolean moveTile(int r, int c) {
+   
 
         return moveToEmpty(r, c, -1, 0) || moveToEmpty(r, c, 1, 0)
                 || moveToEmpty(r, c, 0, -1) || moveToEmpty(r, c, 0, 1);
@@ -196,16 +231,7 @@ class SlidePuzzleModel {
      * for the final position method)
      */
 
-    public boolean isGameOver() {
-        for (int r = 0; r < ROWS; r++) {
-            for (int c = 0; c < ROWS; c++) {
-                Tile trc = contents[r][c];
-                return trc.isInFinalPosition(r, c);
-            }
-        }
-        return true;
 
-    }
 
     public int getRows() {
         return ROWS;
