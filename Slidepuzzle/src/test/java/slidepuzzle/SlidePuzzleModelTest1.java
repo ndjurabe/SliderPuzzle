@@ -209,12 +209,7 @@ public class SlidePuzzleModelTest1 {
         
     }
     
-    @Test
-    public void isGameOverTest(){
-        puzzle.OrderPuzzle();
-        assertTrue(puzzle.isGameOver());
-    }
-    
+   
     @Test
     public void moveToEmptyTest2(){
          emptytile = puzzle.get_contents()[0][1];
